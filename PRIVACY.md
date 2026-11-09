@@ -5,7 +5,8 @@ sample rate, bit depth, dynamic range, integrated loudness and true peak. AudioG
 immediately shows the requested fields when you open the plugin and lets you
 authorize specific reports. No report data is read before you allow access. The plugin
 queries only those authorized fields and reports; it does not request album or
-channel information. Opening the plugin or cancelling grants no access.
+channel information. Opening the plugin grants no access. Cancelling closes the
+plugin window and invalidates the session and any previous authorization.
 Processing occurs locally in an isolated view. The plugin has no network access,
 accounts, analytics, advertising or persistent storage. Audio files, file paths,
 bookmarks, artwork and credentials are not shared with it.

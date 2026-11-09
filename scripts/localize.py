@@ -5,10 +5,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 LANGUAGES = ['en', 'es', 'pt', 'fr', 'de', 'ja', 'ko', 'zh-hans', 'zh-hant']
-ROWS = '''chooseReports|Choose reports|Elegir reportes|Escolher relatórios|Choisir des rapports|Berichte auswählen|レポートを選択|보고서 선택|选择报告|選取報告
-chooseHint|Choose which reports this plugin may query to calculate your statistics.|Elige qué reportes podrá consultar este complemento para calcular tus estadísticas.|Escolha quais relatórios este complemento poderá consultar para calcular suas estatísticas.|Choisissez les rapports que cette extension pourra consulter pour calculer vos statistiques.|Wähle die Berichte aus, die diese Erweiterung für deine Statistik abfragen darf.|統計の計算に使用するため、このプラグインが参照できるレポートを選択します。|통계를 계산할 수 있도록 이 플러그인이 조회할 보고서를 선택하세요.|选择此插件可查询以计算统计数据的报告。|選取此外掛模組可查詢以計算統計資料的報告。
-loading|Waiting for access and loading reports…|Esperando autorización y cargando reportes…|Aguardando autorização e carregando relatórios…|En attente d’autorisation et chargement des rapports…|Warten auf Freigabe und Laden der Berichte…|アクセス許可を待機し、レポートを読み込んでいます…|권한을 기다리고 보고서를 불러오는 중…|正在等待授权并加载报告…|正在等待授權並載入報告…
-accessError|Reports could not be loaded. Choose reports to try again.|No se pudieron cargar los reportes. Elige los reportes para intentarlo de nuevo.|Não foi possível carregar os relatórios. Escolha os relatórios para tentar novamente.|Impossible de charger les rapports. Choisissez des rapports pour réessayer.|Die Berichte konnten nicht geladen werden. Wähle Berichte aus, um es erneut zu versuchen.|レポートを読み込めませんでした。レポートを選択して再試行してください。|보고서를 불러오지 못했습니다. 보고서를 선택하여 다시 시도하세요.|无法加载报告。请选择报告以重试。|無法載入報告。請選取報告以重試。
+ROWS = '''accessError|Reports could not be loaded. Close this window and reopen the plugin to try again.|No se pudieron cargar los reportes. Cierra esta ventana y vuelve a abrir el complemento para reintentar.|Não foi possível carregar os relatórios. Feche esta janela e abra o complemento novamente para tentar outra vez.|Impossible de charger les rapports. Fermez cette fenêtre et rouvrez l’extension pour réessayer.|Die Berichte konnten nicht geladen werden. Schließe dieses Fenster und öffne die Erweiterung erneut, um es noch einmal zu versuchen.|レポートを読み込めませんでした。このウインドウを閉じ、プラグインを開き直して再試行してください。|보고서를 불러오지 못했습니다. 이 창을 닫고 플러그인을 다시 열어 시도하세요.|无法加载报告。请关闭此窗口并重新打开插件以重试。|無法載入報告。請關閉此視窗並重新開啟外掛模組以重試。
 title|Library Statistics|Estadísticas de la biblioteca|Estatísticas da biblioteca|Statistiques de la bibliothèque|Bibliotheksstatistik|ライブラリの統計|라이브러리 통계|资料库统计|資料庫統計
 eyebrow|AudioGrade plugin|Complemento de AudioGrade|Complemento do AudioGrade|Extension AudioGrade|AudioGrade-Erweiterung|AudioGrade プラグイン|AudioGrade 플러그인|AudioGrade 插件|AudioGrade 外掛模組
 subtitle|Explore the reports you selected.|Explora los reportes que seleccionaste.|Explore os relatórios selecionados.|Explorez les rapports sélectionnés.|Erkunde die ausgewählten Berichte.|選択したレポートを確認します。|선택한 보고서를 살펴보세요.|浏览您选择的报告。|瀏覽您選取的報告。
@@ -34,11 +31,11 @@ folder = ROOT / 'plugins/library-statistics'
 (folder / 'locales.js').write_text('/* SPDX-License-Identifier: MIT */\nglobalThis.AudioGradePluginLocales = '
     + json.dumps(translations, ensure_ascii=False, indent=2) + ';\n', encoding='utf-8')
 manifest = {
-    'id': 'library-statistics', 'version': '1.1.1', 'apiVersion': 2,
+    'id': 'library-statistics', 'version': '1.1.2', 'apiVersion': 2,
     'name': {lang: text['title'] for lang, text in translations.items()},
     'description': {lang: text['subtitle'] for lang, text in translations.items()},
     'author': 'AudioGrade', 'license': 'MIT',
-    'sourceURL': 'https://github.com/gpiano/AudioGradePlugins/tree/library-statistics-v1.1.1/plugins/library-statistics',
+    'sourceURL': 'https://github.com/gpiano/AudioGradePlugins/tree/library-statistics-v1.1.2/plugins/library-statistics',
     'privacyURL': 'https://github.com/gpiano/AudioGradePlugins/blob/main/PRIVACY.md',
     'supportURL': 'https://github.com/gpiano/AudioGradePlugins/issues/new?template=plugin-issue.yml',
     'universalLink': 'https://audiograde.app/plugins/library-statistics',

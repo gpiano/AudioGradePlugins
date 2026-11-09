@@ -1,11 +1,11 @@
 # AudioGrade Plugins
 
-External, MIT-licensed plugins for AudioGrade. Library Statistics 1.1.1 is
+External, MIT-licensed plugins for AudioGrade. Library Statistics 1.1.2 is
 published as an immutable GitHub prerelease with its reviewed catalog and
 SHA-256 digest. It is intended for the AudioGrade plugins preview branch.
 The released App Store app does not yet include the plugin manager.
 
-[Download and source release](https://github.com/gpiano/AudioGradePlugins/releases/tag/library-statistics-v1.1.1)
+[Download and source release](https://github.com/gpiano/AudioGradePlugins/releases/tag/library-statistics-v1.1.2)
 
 Website integration, associated-domain provisioning and App Review validation
 remain prerequisites for an App Store release.
@@ -39,8 +39,10 @@ not part of API v2. Use `textContent` to display user-provided strings.
 
 On opening, Library Statistics discovers host capabilities and immediately requests
 native consent for the fields it actually uses. The user goes directly to the
-report selector, then the plugin queries authorized reports in pages. No report payload is pushed on open or on approval. The user can cancel
-or revoke access at any time. See [the API contract](API.md) for methods, versioning,
+report selector, then the plugin queries authorized reports in pages. No report
+payload is pushed on open or on approval. Cancel closes the plugin window and
+ends its session. There is no intermediate screen or Choose Reports button.
+Reopen the plugin from the menu to start again. Access can be revoked at any time. See [the API contract](API.md) for methods, versioning,
 field scopes, pagination, lifecycle and errors.
 
 Library Statistics requests titles, artist, format, duration, sample rate, bit
@@ -54,7 +56,7 @@ privacy and support metadata, and test results before adding a catalog entry.
 Only 4+ utilities are accepted in this first catalog; there are no accounts,
 chat, user-generated content publishing, payments or externally loaded content.
 
-Publish a draft GitHub release named `library-statistics-v1.1.1`, upload the exact
+Publish a draft GitHub release named `library-statistics-v1.1.2`, upload the exact
 generated asset, enable immutable releases, then publish the release. Publish the
 catalog only after that asset is reachable. Never replace an existing package
 under the same version. Updates need a new version, review and explicit installation.

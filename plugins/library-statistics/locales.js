@@ -1,10 +1,7 @@
 /* SPDX-License-Identifier: MIT */
 globalThis.AudioGradePluginLocales = {
   "en": {
-    "chooseReports": "Choose reports",
-    "chooseHint": "Choose which reports this plugin may query to calculate your statistics.",
-    "loading": "Waiting for access and loading reports…",
-    "accessError": "Reports could not be loaded. Choose reports to try again.",
+    "accessError": "Reports could not be loaded. Close this window and reopen the plugin to try again.",
     "title": "Library Statistics",
     "eyebrow": "AudioGrade plugin",
     "subtitle": "Explore the reports you selected.",
@@ -25,10 +22,7 @@ globalThis.AudioGradePluginLocales = {
     "missingDuration": "Tracks without duration"
   },
   "es": {
-    "chooseReports": "Elegir reportes",
-    "chooseHint": "Elige qué reportes podrá consultar este complemento para calcular tus estadísticas.",
-    "loading": "Esperando autorización y cargando reportes…",
-    "accessError": "No se pudieron cargar los reportes. Elige los reportes para intentarlo de nuevo.",
+    "accessError": "No se pudieron cargar los reportes. Cierra esta ventana y vuelve a abrir el complemento para reintentar.",
     "title": "Estadísticas de la biblioteca",
     "eyebrow": "Complemento de AudioGrade",
     "subtitle": "Explora los reportes que seleccionaste.",
@@ -49,10 +43,7 @@ globalThis.AudioGradePluginLocales = {
     "missingDuration": "Pistas sin duración"
   },
   "pt": {
-    "chooseReports": "Escolher relatórios",
-    "chooseHint": "Escolha quais relatórios este complemento poderá consultar para calcular suas estatísticas.",
-    "loading": "Aguardando autorização e carregando relatórios…",
-    "accessError": "Não foi possível carregar os relatórios. Escolha os relatórios para tentar novamente.",
+    "accessError": "Não foi possível carregar os relatórios. Feche esta janela e abra o complemento novamente para tentar outra vez.",
     "title": "Estatísticas da biblioteca",
     "eyebrow": "Complemento do AudioGrade",
     "subtitle": "Explore os relatórios selecionados.",
@@ -73,10 +64,7 @@ globalThis.AudioGradePluginLocales = {
     "missingDuration": "Faixas sem duração"
   },
   "fr": {
-    "chooseReports": "Choisir des rapports",
-    "chooseHint": "Choisissez les rapports que cette extension pourra consulter pour calculer vos statistiques.",
-    "loading": "En attente d’autorisation et chargement des rapports…",
-    "accessError": "Impossible de charger les rapports. Choisissez des rapports pour réessayer.",
+    "accessError": "Impossible de charger les rapports. Fermez cette fenêtre et rouvrez l’extension pour réessayer.",
     "title": "Statistiques de la bibliothèque",
     "eyebrow": "Extension AudioGrade",
     "subtitle": "Explorez les rapports sélectionnés.",
@@ -97,10 +85,7 @@ globalThis.AudioGradePluginLocales = {
     "missingDuration": "Pistes sans durée"
   },
   "de": {
-    "chooseReports": "Berichte auswählen",
-    "chooseHint": "Wähle die Berichte aus, die diese Erweiterung für deine Statistik abfragen darf.",
-    "loading": "Warten auf Freigabe und Laden der Berichte…",
-    "accessError": "Die Berichte konnten nicht geladen werden. Wähle Berichte aus, um es erneut zu versuchen.",
+    "accessError": "Die Berichte konnten nicht geladen werden. Schließe dieses Fenster und öffne die Erweiterung erneut, um es noch einmal zu versuchen.",
     "title": "Bibliotheksstatistik",
     "eyebrow": "AudioGrade-Erweiterung",
     "subtitle": "Erkunde die ausgewählten Berichte.",
@@ -121,10 +106,7 @@ globalThis.AudioGradePluginLocales = {
     "missingDuration": "Titel ohne Dauer"
   },
   "ja": {
-    "chooseReports": "レポートを選択",
-    "chooseHint": "統計の計算に使用するため、このプラグインが参照できるレポートを選択します。",
-    "loading": "アクセス許可を待機し、レポートを読み込んでいます…",
-    "accessError": "レポートを読み込めませんでした。レポートを選択して再試行してください。",
+    "accessError": "レポートを読み込めませんでした。このウインドウを閉じ、プラグインを開き直して再試行してください。",
     "title": "ライブラリの統計",
     "eyebrow": "AudioGrade プラグイン",
     "subtitle": "選択したレポートを確認します。",
@@ -145,10 +127,7 @@ globalThis.AudioGradePluginLocales = {
     "missingDuration": "長さが不明なトラック"
   },
   "ko": {
-    "chooseReports": "보고서 선택",
-    "chooseHint": "통계를 계산할 수 있도록 이 플러그인이 조회할 보고서를 선택하세요.",
-    "loading": "권한을 기다리고 보고서를 불러오는 중…",
-    "accessError": "보고서를 불러오지 못했습니다. 보고서를 선택하여 다시 시도하세요.",
+    "accessError": "보고서를 불러오지 못했습니다. 이 창을 닫고 플러그인을 다시 열어 시도하세요.",
     "title": "라이브러리 통계",
     "eyebrow": "AudioGrade 플러그인",
     "subtitle": "선택한 보고서를 살펴보세요.",
@@ -169,10 +148,7 @@ globalThis.AudioGradePluginLocales = {
     "missingDuration": "길이가 없는 트랙"
   },
   "zh-hans": {
-    "chooseReports": "选择报告",
-    "chooseHint": "选择此插件可查询以计算统计数据的报告。",
-    "loading": "正在等待授权并加载报告…",
-    "accessError": "无法加载报告。请选择报告以重试。",
+    "accessError": "无法加载报告。请关闭此窗口并重新打开插件以重试。",
     "title": "资料库统计",
     "eyebrow": "AudioGrade 插件",
     "subtitle": "浏览您选择的报告。",
@@ -193,10 +169,7 @@ globalThis.AudioGradePluginLocales = {
     "missingDuration": "缺少时长的音轨"
   },
   "zh-hant": {
-    "chooseReports": "選取報告",
-    "chooseHint": "選取此外掛模組可查詢以計算統計資料的報告。",
-    "loading": "正在等待授權並載入報告…",
-    "accessError": "無法載入報告。請選取報告以重試。",
+    "accessError": "無法載入報告。請關閉此視窗並重新開啟外掛模組以重試。",
     "title": "資料庫統計",
     "eyebrow": "AudioGrade 外掛模組",
     "subtitle": "瀏覽您選取的報告。",

@@ -1,7 +1,7 @@
 /* SPDX-License-Identifier: MIT */
 (() => {
   'use strict';
-  let context, summary, words, number, locale, field = 'title', descending = false, status = 'loading', loading = false;
+  let context, summary, words, number, locale, field = 'title', descending = false, failed = false;
   const el = id => document.getElementById(id);
   const node = (tag, text, className) => {
     const result = document.createElement(tag);
@@ -64,10 +64,9 @@
     document.title = words.title;
     el('eyebrow').textContent = words.eyebrow; el('title').textContent = words.title;
     el('subtitle').textContent = words.subtitle;
-    el('access-status').textContent = words[status];
-    el('request-access').textContent = words.chooseReports;
-    el('request-access').hidden = status === 'loading';
-    el('access').hidden = !!summary;
+    el('load-error').textContent = words.accessError;
+    el('load-error').hidden = !failed;
+    el('statistics').hidden = !summary;
     el('results').hidden = !summary;
     if (!summary) return;
     el('summary').setAttribute('aria-label', words.summary);
@@ -96,25 +95,19 @@
     render();
   }
   async function loadReports() {
-    if (loading) return;
-    loading = true;
-    el('request-access').disabled = true;
-    status = 'loading'; render();
     try {
       context = await AudioGradeStatisticsData.load(AudioGrade);
       summary = AudioGradeStatistics.summarize(context);
       render();
     } catch (error) {
       summary = undefined;
-      status = error.code === 'USER_CANCELLED' ? 'chooseHint' : 'accessError';
+      failed = !['USER_CANCELLED', 'ACCESS_REVOKED'].includes(error.code);
       render();
-    } finally { loading = false; el('request-access').disabled = false; }
+    }
   }
-  el('request-access').addEventListener('click', loadReports);
   window.addEventListener('audiograde:environmentChanged', () => { updateEnvironment().catch(() => {}); });
   updateEnvironment().then(loadReports).catch(() => {
     context = {language: 'en', appearance: 'dark'};
-    status = 'accessError'; render();
-    el('request-access').disabled = true;
+    failed = true; render();
   });
 })();
