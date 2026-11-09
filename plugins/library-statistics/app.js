@@ -1,7 +1,7 @@
 /* SPDX-License-Identifier: MIT */
 (() => {
   'use strict';
-  let context, summary, words, number, locale, field = 'title', descending = false;
+  let context, summary, words, number, locale, field = 'title', descending = false, status = 'chooseHint';
   const el = id => document.getElementById(id);
   const node = (tag, text, className) => {
     const result = document.createElement(tag);
@@ -64,6 +64,11 @@
     document.title = words.title;
     el('eyebrow').textContent = words.eyebrow; el('title').textContent = words.title;
     el('subtitle').textContent = words.subtitle;
+    el('access-status').textContent = words[status];
+    el('request-access').textContent = words.chooseReports;
+    el('access').hidden = !!summary;
+    el('results').hidden = !summary;
+    if (!summary) return;
     el('summary').setAttribute('aria-label', words.summary);
     el('summary').replaceChildren(card(words.reports, integer(summary.reportCount)), card(words.tracks, integer(summary.trackCount)),
       card(words.duration, summary.knownDurationCount ? duration(summary.knownDurationSeconds) : '—'));
@@ -85,9 +90,27 @@
     renderTable();
   }
   el('search').addEventListener('input', () => { if (summary) renderTable(); });
-  window.addEventListener('audiograde:context', event => {
-    context = event.detail;
-    summary = AudioGradeStatistics.summarize(context);
+  async function updateEnvironment() {
+    context = {...context, ...await AudioGrade.getInfo()};
     render();
+  }
+  el('request-access').addEventListener('click', async () => {
+    el('request-access').disabled = true;
+    status = 'loading'; render();
+    try {
+      context = await AudioGradeStatisticsData.load(AudioGrade);
+      summary = AudioGradeStatistics.summarize(context);
+      render();
+    } catch (error) {
+      summary = undefined;
+      status = error.code === 'USER_CANCELLED' ? 'chooseHint' : 'accessError';
+      render();
+    } finally { el('request-access').disabled = false; }
+  });
+  window.addEventListener('audiograde:environmentChanged', () => { updateEnvironment().catch(() => {}); });
+  updateEnvironment().catch(() => {
+    context = {language: 'en', appearance: 'dark'};
+    status = 'accessError'; render();
+    el('request-access').disabled = true;
   });
 })();

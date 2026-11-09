@@ -2,9 +2,9 @@
 (() => {
   function assert(condition, message) { if (!condition) throw new Error(message); }
   const {summarize, sortTracks} = AudioGradeStatistics;
-  const empty = summarize({apiVersion: 1, reports: []});
+  const empty = summarize({apiVersion: 2, reports: []});
   assert(empty.reportCount === 0 && empty.trackCount === 0 && empty.formats.length === 0, 'empty library');
-  const input = {apiVersion: 1, reports: [
+  const input = {apiVersion: 2, reports: [
     {title: '<script>unsafe</script>', tracks: [
       {title: 'A', format: ' flac ', durationSeconds: 0, sampleRate: 44100, bitsPerSample: 16, integratedLufs: -12},
       {title: 'B', format: 'FLAC', durationSeconds: 120.5, sampleRate: 44100, bitsPerSample: 24, integratedLufs: -8},
@@ -21,9 +21,9 @@
   assert(sortTracks(result.tracks, 'integratedLufs')[0].integratedLufs === -12, 'numeric ascending sorting');
   assert(sortTracks(result.tracks, 'integratedLufs', true)[0].integratedLufs === -8, 'numeric descending sorting');
   assert(sortTracks(result.tracks, 'integratedLufs', true).at(-1).integratedLufs == null, 'missing values remain last');
-  assert(summarize({apiVersion: 1, reports: [{tracks: [{durationSeconds: Infinity}, {durationSeconds: -1}]}]}).knownDurationCount === 0, 'rejects invalid durations');
+  assert(summarize({apiVersion: 2, reports: [{tracks: [{durationSeconds: Infinity}, {durationSeconds: -1}]}]}).knownDurationCount === 0, 'rejects invalid durations');
   let rejected = false;
-  try { summarize({apiVersion: 2, reports: []}); } catch { rejected = true; }
+  try { summarize({apiVersion: 3, reports: []}); } catch { rejected = true; }
   assert(rejected, 'rejects an incompatible context');
   return '14 statistics checks passed';
 })();

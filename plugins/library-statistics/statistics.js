@@ -14,7 +14,7 @@
       .sort((a, b) => b.count - a.count || String(a.value).localeCompare(String(b.value)));
   };
   function summarize(context) {
-    if (!context || context.apiVersion !== 1 || !Array.isArray(context.reports)) throw new Error('Unsupported context');
+    if (!context || context.apiVersion !== 2 || !Array.isArray(context.reports)) throw new Error('Unsupported context');
     const tracks = context.reports.flatMap(report => (Array.isArray(report.tracks) ? report.tracks : []).map(track => ({
       ...track, reportTitle: report.title || '', artist: report.artist || '', album: report.album || ''
     })));

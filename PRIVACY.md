@@ -1,12 +1,16 @@
 # Plugin privacy
 
-Library Statistics uses the report titles, artist, album, track technical
-properties, duration and measurements that you explicitly select in AudioGrade.
+Library Statistics requests report and track titles, artist, format, duration,
+sample rate, bit depth, dynamic range, integrated loudness and true peak. AudioGrade
+shows the requested fields and lets you authorize specific reports. The plugin
+queries only those authorized fields and reports; it does not request album or
+channel information. Opening the plugin or cancelling grants no access.
 Processing occurs locally in an isolated view. The plugin has no network access,
 accounts, analytics, advertising or persistent storage. Audio files, file paths,
 bookmarks, artwork and credentials are not shared with it.
 
-The current snapshot is discarded when you stop sharing or close the plugin.
+Authorization is limited to the current session. The grant, pending queries and
+loaded data are discarded when you stop sharing or close the plugin.
 Disabling, removing or blocking a plugin also ends its access. Removing a plugin
 does not remove or modify your reports or audio files.
 
