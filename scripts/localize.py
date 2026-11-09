@@ -34,11 +34,11 @@ folder = ROOT / 'plugins/library-statistics'
 (folder / 'locales.js').write_text('/* SPDX-License-Identifier: MIT */\nglobalThis.AudioGradePluginLocales = '
     + json.dumps(translations, ensure_ascii=False, indent=2) + ';\n', encoding='utf-8')
 manifest = {
-    'id': 'library-statistics', 'version': '1.1.0', 'apiVersion': 2,
+    'id': 'library-statistics', 'version': '1.1.1', 'apiVersion': 2,
     'name': {lang: text['title'] for lang, text in translations.items()},
     'description': {lang: text['subtitle'] for lang, text in translations.items()},
     'author': 'AudioGrade', 'license': 'MIT',
-    'sourceURL': 'https://github.com/gpiano/AudioGradePlugins/tree/library-statistics-v1.1.0/plugins/library-statistics',
+    'sourceURL': 'https://github.com/gpiano/AudioGradePlugins/tree/library-statistics-v1.1.1/plugins/library-statistics',
     'privacyURL': 'https://github.com/gpiano/AudioGradePlugins/blob/main/PRIVACY.md',
     'supportURL': 'https://github.com/gpiano/AudioGradePlugins/issues/new?template=plugin-issue.yml',
     'universalLink': 'https://audiograde.app/plugins/library-statistics',

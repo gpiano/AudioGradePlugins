@@ -3,9 +3,10 @@
 Plugins declare `apiVersion: 2` and `permissions: ["reports.read"]` in their
 manifest. The host provides the frozen `window.AudioGrade` object before plugin
 scripts run. Every method below returns a Promise. Opening a plugin transfers no
-report data and grants no access. Plugins render their own initial interface.
+report data and grants no access. A plugin can request authorization as it opens,
+so the native report selector is shown directly without an intermediate screen.
 
-This replaces the experimental v1 pushed context event. Library Statistics 1.1.0
+This replaces the experimental v1 pushed context event. Library Statistics 1.1.1
 requires the updated AudioGrade preview. API v1 packages are not executed by the
 v2 host; install the current catalog version. Neither preview is an App Store release.
 
@@ -34,7 +35,10 @@ changes. Call `getInfo()` again; it does not carry or refresh report data.
 
 ## Request authorization
 
-Ask from a clear user action in the plugin, for example a Choose Reports button:
+Request authorization when the plugin opens if reports are needed immediately,
+or from a clear user action such as a Choose Reports button. Native approval is
+always required. Library Statistics requests once on opening and offers an explicit
+retry after cancellation or failure:
 
 ```js
 const fields = ['report.title', 'track.title', 'track.integratedLufs'];
@@ -96,7 +100,9 @@ Cancel rejects the pending authorization with `USER_CANCELLED`. Render a useful
 initial state and allow another deliberate request. Do not repeatedly prompt.
 
 The native Stop Sharing action invalidates grants and pending work, destroys the
-WebKit document and starts a new plugin instance with no report data. Closing,
+WebKit document and starts a new plugin instance with no report data. Library
+Statistics immediately requests a fresh native selection, which still needs
+explicit approval. Cancelling that request does not prompt again. Closing,
 disabling, removing, blocking or catalog revocation ends the session too. An
 in-flight response is checked again after reading and is not delivered after
 revocation. Tokens cannot be reused across instances or plugins. A plugin cannot

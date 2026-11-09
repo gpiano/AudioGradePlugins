@@ -2,7 +2,8 @@
 
 Library Statistics requests report and track titles, artist, format, duration,
 sample rate, bit depth, dynamic range, integrated loudness and true peak. AudioGrade
-shows the requested fields and lets you authorize specific reports. The plugin
+immediately shows the requested fields when you open the plugin and lets you
+authorize specific reports. No report data is read before you allow access. The plugin
 queries only those authorized fields and reports; it does not request album or
 channel information. Opening the plugin or cancelling grants no access.
 Processing occurs locally in an isolated view. The plugin has no network access,

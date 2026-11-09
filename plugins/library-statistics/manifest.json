@@ -1,6 +1,6 @@
 {
   "id": "library-statistics",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "apiVersion": 2,
   "name": {
     "en": "Library Statistics",
@@ -26,7 +26,7 @@
   },
   "author": "AudioGrade",
   "license": "MIT",
-  "sourceURL": "https://github.com/gpiano/AudioGradePlugins/tree/library-statistics-v1.1.0/plugins/library-statistics",
+  "sourceURL": "https://github.com/gpiano/AudioGradePlugins/tree/library-statistics-v1.1.1/plugins/library-statistics",
   "privacyURL": "https://github.com/gpiano/AudioGradePlugins/blob/main/PRIVACY.md",
   "supportURL": "https://github.com/gpiano/AudioGradePlugins/issues/new?template=plugin-issue.yml",
   "universalLink": "https://audiograde.app/plugins/library-statistics",

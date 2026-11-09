@@ -1,7 +1,7 @@
 /* SPDX-License-Identifier: MIT */
 (() => {
   'use strict';
-  let context, summary, words, number, locale, field = 'title', descending = false, status = 'chooseHint';
+  let context, summary, words, number, locale, field = 'title', descending = false, status = 'loading', loading = false;
   const el = id => document.getElementById(id);
   const node = (tag, text, className) => {
     const result = document.createElement(tag);
@@ -66,6 +66,7 @@
     el('subtitle').textContent = words.subtitle;
     el('access-status').textContent = words[status];
     el('request-access').textContent = words.chooseReports;
+    el('request-access').hidden = status === 'loading';
     el('access').hidden = !!summary;
     el('results').hidden = !summary;
     if (!summary) return;
@@ -94,7 +95,9 @@
     context = {...context, ...await AudioGrade.getInfo()};
     render();
   }
-  el('request-access').addEventListener('click', async () => {
+  async function loadReports() {
+    if (loading) return;
+    loading = true;
     el('request-access').disabled = true;
     status = 'loading'; render();
     try {
@@ -105,10 +108,11 @@
       summary = undefined;
       status = error.code === 'USER_CANCELLED' ? 'chooseHint' : 'accessError';
       render();
-    } finally { el('request-access').disabled = false; }
-  });
+    } finally { loading = false; el('request-access').disabled = false; }
+  }
+  el('request-access').addEventListener('click', loadReports);
   window.addEventListener('audiograde:environmentChanged', () => { updateEnvironment().catch(() => {}); });
-  updateEnvironment().catch(() => {
+  updateEnvironment().then(loadReports).catch(() => {
     context = {language: 'en', appearance: 'dark'};
     status = 'accessError'; render();
     el('request-access').disabled = true;
