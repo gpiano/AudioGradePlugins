@@ -62,7 +62,7 @@
     document.documentElement.lang = locale;
     document.documentElement.dataset.appearance = context.appearance;
     document.title = words.title;
-    el('eyebrow').textContent = words.eyebrow; el('title').textContent = words.title;
+    el('title').textContent = words.title;
     el('subtitle').textContent = words.subtitle;
     el('load-error').textContent = words.accessError;
     el('load-error').hidden = !failed;

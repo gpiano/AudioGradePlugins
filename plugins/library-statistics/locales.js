@@ -3,7 +3,6 @@ globalThis.AudioGradePluginLocales = {
   "en": {
     "accessError": "Reports could not be loaded. Close this window and reopen the plugin to try again.",
     "title": "Library Statistics",
-    "eyebrow": "AudioGrade plugin",
     "subtitle": "Explore the reports you selected.",
     "summary": "Summary",
     "reports": "Reports",
@@ -24,7 +23,6 @@ globalThis.AudioGradePluginLocales = {
   "es": {
     "accessError": "No se pudieron cargar los reportes. Cierra esta ventana y vuelve a abrir el complemento para reintentar.",
     "title": "Estadísticas de la biblioteca",
-    "eyebrow": "Complemento de AudioGrade",
     "subtitle": "Explora los reportes que seleccionaste.",
     "summary": "Resumen",
     "reports": "Reportes",
@@ -45,7 +43,6 @@ globalThis.AudioGradePluginLocales = {
   "pt": {
     "accessError": "Não foi possível carregar os relatórios. Feche esta janela e abra o complemento novamente para tentar outra vez.",
     "title": "Estatísticas da biblioteca",
-    "eyebrow": "Complemento do AudioGrade",
     "subtitle": "Explore os relatórios selecionados.",
     "summary": "Resumo",
     "reports": "Relatórios",
@@ -66,7 +63,6 @@ globalThis.AudioGradePluginLocales = {
   "fr": {
     "accessError": "Impossible de charger les rapports. Fermez cette fenêtre et rouvrez l’extension pour réessayer.",
     "title": "Statistiques de la bibliothèque",
-    "eyebrow": "Extension AudioGrade",
     "subtitle": "Explorez les rapports sélectionnés.",
     "summary": "Résumé",
     "reports": "Rapports",
@@ -87,7 +83,6 @@ globalThis.AudioGradePluginLocales = {
   "de": {
     "accessError": "Die Berichte konnten nicht geladen werden. Schließe dieses Fenster und öffne die Erweiterung erneut, um es noch einmal zu versuchen.",
     "title": "Bibliotheksstatistik",
-    "eyebrow": "AudioGrade-Erweiterung",
     "subtitle": "Erkunde die ausgewählten Berichte.",
     "summary": "Übersicht",
     "reports": "Berichte",
@@ -108,7 +103,6 @@ globalThis.AudioGradePluginLocales = {
   "ja": {
     "accessError": "レポートを読み込めませんでした。このウインドウを閉じ、プラグインを開き直して再試行してください。",
     "title": "ライブラリの統計",
-    "eyebrow": "AudioGrade プラグイン",
     "subtitle": "選択したレポートを確認します。",
     "summary": "概要",
     "reports": "レポート",
@@ -129,7 +123,6 @@ globalThis.AudioGradePluginLocales = {
   "ko": {
     "accessError": "보고서를 불러오지 못했습니다. 이 창을 닫고 플러그인을 다시 열어 시도하세요.",
     "title": "라이브러리 통계",
-    "eyebrow": "AudioGrade 플러그인",
     "subtitle": "선택한 보고서를 살펴보세요.",
     "summary": "요약",
     "reports": "보고서",
@@ -150,7 +143,6 @@ globalThis.AudioGradePluginLocales = {
   "zh-hans": {
     "accessError": "无法加载报告。请关闭此窗口并重新打开插件以重试。",
     "title": "资料库统计",
-    "eyebrow": "AudioGrade 插件",
     "subtitle": "浏览您选择的报告。",
     "summary": "摘要",
     "reports": "报告",
@@ -171,7 +163,6 @@ globalThis.AudioGradePluginLocales = {
   "zh-hant": {
     "accessError": "無法載入報告。請關閉此視窗並重新開啟外掛模組以重試。",
     "title": "資料庫統計",
-    "eyebrow": "AudioGrade 外掛模組",
     "subtitle": "瀏覽您選取的報告。",
     "summary": "摘要",
     "reports": "報告",

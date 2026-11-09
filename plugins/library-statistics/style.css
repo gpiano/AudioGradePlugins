@@ -1,6 +1,113 @@
-:root{color-scheme:light dark;--bg:#f5f5f7;--surface:#fff;--text:#202124;--muted:#62656c;--line:#e2e4e9;--accent:#0869d7;--bar:#e7effa;font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:14px}
-:root[data-appearance=dark]{color-scheme:dark;--bg:#1c1c1e;--surface:#29292c;--text:#f4f4f7;--muted:#b0b0b9;--line:#424247;--accent:#5eabff;--bar:#333f50}
-:root[data-appearance=light]{color-scheme:light}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text)}main{max-width:1300px;margin:auto;padding:30px}header{margin-bottom:24px}h1{font-size:28px;letter-spacing:-.5px;margin:7px 0 9px}h2{font-size:15px;margin:0 0 20px}.eyebrow{color:var(--accent);font-weight:650;font-size:11px;letter-spacing:1.4px;text-transform:uppercase}.muted{color:var(--muted)}.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card,.distribution,.track-section{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px}.card p{margin:0 0 9px}.card strong{font-size:29px;letter-spacing:-.7px;font-variant-numeric:tabular-nums}.distributions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:16px 0}.bar-row{margin:13px 0}.bar-heading{display:flex;justify-content:space-between;gap:8px;margin-bottom:6px;font-size:12px}.bar{height:7px;border-radius:4px;background:var(--bar);overflow:hidden}.fill{height:100%;background:var(--accent);border-radius:4px}.section-heading{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:12px}.section-heading h2{margin:0}.section-heading label span{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}input{font:inherit;border:1px solid var(--line);border-radius:7px;padding:7px 9px;background:var(--bg);color:var(--text);max-width:210px}.table-scroll{overflow:auto;max-height:360px}table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;font-size:12px}th{text-align:left;position:sticky;top:0;background:var(--surface);z-index:1}th,td{padding:11px 9px;border-bottom:1px solid var(--line)}th button{font:inherit;font-weight:650;border:0;padding:0;background:transparent;color:var(--text);cursor:pointer;text-align:inherit}th[aria-sort=ascending] button:after{content:' ↑'}th[aria-sort=descending] button:after{content:' ↓'}td:first-child{min-width:200px}small{display:block;margin-top:4px;font-size:11px}.numeric{text-align:right;white-space:nowrap}th:nth-child(n+3){text-align:right}footer{font-size:11px;line-height:1.6;margin-top:17px}button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:3px}@media(max-width:700px){main{padding:20px}.distributions{grid-template-columns:1fr}.summary{gap:8px}.card{padding:12px}.card strong{font-size:23px}}
-
-[hidden]{display:none!important}#load-error{line-height:1.5;margin:30px;color:var(--muted)}
+/* SPDX-License-Identifier: MIT
+ * Mirrors AudioGrade's ReportSurfaceChrome, metric cards and inline controls.
+ * Kept in the external package so presentation updates do not require a host release.
+ */
+:root {
+  color-scheme: light;
+  --background: #ececec;
+  --panel: #f6f6f6;
+  --text: #141417;
+  --secondary: #57575c;
+  --border: rgb(0 0 0 / 12%);
+  --accent: #00409e;
+  --field: #fff;
+  --header: #e8e8e8;
+  --row: #fff;
+  --alternate: #f2f2f2;
+  --hover: rgb(0 64 158 / 7%);
+  --track: rgb(128 128 128 / 16%);
+  --scroll-thumb: #929292;
+  --scroll-track: #e4e4e4;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+}
+:root[data-appearance="dark"] {
+  color-scheme: dark;
+  --background: #1e1e1e;
+  --panel: #161719;
+  --text: #f5f5f7;
+  --secondary: #c2c2c7;
+  --border: rgb(255 255 255 / 10%);
+  --accent: #6bb8ff;
+  --field: #1b1b1b;
+  --header: #262628;
+  --row: #1c1c1e;
+  --alternate: #242426;
+  --hover: rgb(107 184 255 / 8%);
+  --scroll-thumb: #898989;
+  --scroll-track: #292929;
+}
+* { box-sizing: border-box; }
+html { height: 100%; overflow: hidden; }
+body { margin: 0; background: var(--background); color: var(--text); }
+main { height: 100vh; overflow: auto; }
+.content { max-width: 1200px; margin: auto; padding: 24px; }
+header { margin-bottom: 20px; }
+h1 { margin: 0 0 6px; font-size: 20px; font-weight: 700; line-height: 1.25; }
+h2 { margin: 0; font-size: 13px; font-weight: 600; }
+p { margin: 0; }
+.muted { color: var(--secondary); }
+.summary, .distributions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.card, .distribution, .track-section { border: 1px solid var(--border); border-radius: 8px; background: var(--panel); }
+.card { position: relative; min-height: 90px; padding: 13px 18px 18px; overflow: hidden; }
+.card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--accent); }
+.card p { margin-bottom: 5px; font-size: 11px; }
+.card strong { font-family: ui-rounded, -apple-system, BlinkMacSystemFont, sans-serif; font-size: 25px; font-weight: 600; line-height: 1.25; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.distributions { margin: 16px 0; }
+.distribution { padding: 14px; }
+.distribution h2 { margin-bottom: 14px; }
+.bar-row + .bar-row { margin-top: 12px; }
+.bar-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 5px; font-size: 12px; font-variant-numeric: tabular-nums; }
+.bar-heading span:first-child { overflow-wrap: anywhere; }
+.bar-heading span:last-child { flex-shrink: 0; }
+.bar { height: 6px; border-radius: 3px; background: var(--track); overflow: hidden; }
+.fill { height: 100%; border-radius: inherit; background: var(--accent); }
+.track-section { padding: 14px; }
+.section-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 12px; }
+.search-field { display: block; width: 220px; flex-shrink: 0; }
+.search-field span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+input { display: block; width: 100%; height: 28px; padding: 3px 8px; border: 1px solid var(--border); border-radius: 7px; background: var(--field); color: var(--text); font: inherit; }
+input::placeholder { color: var(--secondary); opacity: 1; }
+input:focus-visible { outline: 3px solid var(--accent); outline-offset: 1px; }
+.table-scroll { max-height: 360px; overflow: auto; border: 1px solid var(--border); border-radius: 6px; background: var(--row); }
+.table-scroll:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+table { width: 100%; min-width: 560px; border-spacing: 0; table-layout: fixed; font-size: 13px; font-variant-numeric: tabular-nums; }
+th { position: sticky; top: 0; z-index: 1; padding: 0; text-align: left; border-bottom: 1px solid var(--border); background: var(--header); }
+th:first-child { width: 44%; }
+th:nth-child(2) { width: 17%; }
+th:nth-child(n+3) { width: 13%; text-align: right; }
+th + th { border-left: 1px solid var(--border); }
+th button { display: block; width: 100%; min-height: 28px; padding: 6px 8px; border: 0; background: transparent; color: var(--text); font: inherit; font-size: 11px; font-weight: 600; text-align: inherit; cursor: pointer; }
+th button:hover { background: var(--hover); }
+th button:focus-visible { outline: 2px solid var(--accent); outline-offset: -3px; border-radius: 3px; }
+th[aria-sort="ascending"] button::after { content: " ↑"; }
+th[aria-sort="descending"] button::after { content: " ↓"; }
+td { padding: 7px 8px; vertical-align: middle; overflow-wrap: anywhere; }
+tbody tr:nth-child(even) { background: var(--alternate); }
+tbody tr:hover { background: var(--hover); }
+small { display: block; margin-top: 2px; font-size: 11px; }
+.numeric { text-align: right; white-space: nowrap; }
+#no-matches { padding: 40px 16px; text-align: center; }
+footer { margin-top: 12px; font-size: 11px; line-height: 1.5; }
+#load-error { display: grid; min-height: 100vh; place-content: center; padding: 24px; text-align: center; color: var(--secondary); }
+[hidden] { display: none !important; }
+/* Persistent scrollers only when content overflows, like AudioGrade's tables. */
+::-webkit-scrollbar { width: 14px; height: 14px; }
+::-webkit-scrollbar-track, ::-webkit-scrollbar-corner { background: var(--scroll-track); }
+::-webkit-scrollbar-thumb { min-height: 28px; border: 3px solid var(--scroll-track); border-radius: 8px; background: var(--scroll-thumb); }
+::-webkit-scrollbar-thumb:hover { background: var(--secondary); }
+@media (max-width: 650px) {
+  .content { padding: 16px; }
+  .distributions { grid-template-columns: 1fr; }
+  .card { padding-inline: 12px; }
+  .section-heading { align-items: stretch; flex-direction: column; gap: 10px; }
+  .search-field { width: 100%; }
+}
+@media (max-width: 400px) {
+  .summary { grid-template-columns: 1fr; }
+}
+@media (prefers-contrast: more) {
+  :root { --border: rgb(0 0 0 / 34%); --secondary: #38383d; --accent: #002b75; }
+  :root[data-appearance="dark"] { --border: rgb(255 255 255 / 30%); --secondary: #e6e6eb; --accent: #94cfff; }
+}

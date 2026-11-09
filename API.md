@@ -104,12 +104,12 @@ reopens the plugin from AudioGrade’s menu and approves a fresh selection.
 Library Statistics shows only a localized message if loading fails, asking the
 user to close and reopen the plugin.
 
-The native Stop Sharing action invalidates grants and pending work, destroys the
-WebKit document and closes that plugin window. It does not start another instance
+Closing the native plugin window invalidates grants and pending work and destroys
+the WebKit document. It does not start another instance
 or reopen the selector. The user can explicitly reopen the plugin from the menu,
-which creates a new session requiring a fresh selection and approval. Closing,
-disabling, removing, blocking or catalog revocation ends the session too. An
-in-flight response is checked again after reading and is not delivered after
+which creates a new session requiring a fresh selection and approval. Disabling,
+removing, blocking or catalog revocation ends the session too. An in-flight
+response is checked again after reading and is not delivered after
 revocation. Tokens cannot be reused across instances or plugins. A plugin cannot
 persist its reports in the nonpersistent host or transmit them over the network.
 

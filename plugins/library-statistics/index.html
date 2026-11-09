@@ -13,16 +13,18 @@
 <body>
   <p id="load-error" role="alert" hidden></p>
   <main id="statistics" hidden>
-    <header><p class="eyebrow" id="eyebrow"></p><h1 id="title"></h1><p id="subtitle" class="muted"></p></header>
+    <div class="content">
+    <header><h1 id="title"></h1><p id="subtitle" class="muted"></p></header>
     <div id="results" hidden>
     <section class="summary" aria-label="Summary" id="summary"></section>
     <section class="distributions" id="distributions"></section>
     <section class="track-section">
-      <div class="section-heading"><h2 id="tracks-title"></h2><label><span id="search-label"></span><input id="search" type="search"></label></div>
-      <div class="table-scroll"><table><thead><tr id="columns"></tr></thead><tbody id="tracks"></tbody></table></div>
-      <p id="no-matches" class="muted" hidden></p>
+      <div class="section-heading"><h2 id="tracks-title"></h2><label class="search-field"><span id="search-label"></span><input id="search" type="search"></label></div>
+      <div class="table-scroll" tabindex="0" role="region" aria-labelledby="tracks-title"><table aria-labelledby="tracks-title"><thead><tr id="columns"></tr></thead><tbody id="tracks"></tbody></table></div>
+      <p id="no-matches" class="muted" role="status" hidden></p>
     </section>
     <footer id="note" class="muted"></footer>
+    </div>
     </div>
   </main>
 </body>
