@@ -4,7 +4,7 @@
     {
       "manifest": {
         "id": "library-statistics",
-        "version": "1.1.2",
+        "version": "1.1.3",
         "apiVersion": 2,
         "name": {
           "en": "Library Statistics",
@@ -30,7 +30,7 @@
         },
         "author": "AudioGrade",
         "license": "MIT",
-        "sourceURL": "https://github.com/gpiano/AudioGradePlugins/tree/library-statistics-v1.1.2/plugins/library-statistics",
+        "sourceURL": "https://github.com/gpiano/AudioGradePlugins/tree/library-statistics-v1.1.3/plugins/library-statistics",
         "privacyURL": "https://github.com/gpiano/AudioGradePlugins/blob/main/PRIVACY.md",
         "supportURL": "https://github.com/gpiano/AudioGradePlugins/issues/new?template=plugin-issue.yml",
         "universalLink": "https://audiograde.app/plugins/library-statistics",
@@ -40,8 +40,8 @@
         ],
         "entrypoint": "index.html"
       },
-      "downloadURL": "https://github.com/gpiano/AudioGradePlugins/releases/download/library-statistics-v1.1.2/library-statistics-1.1.2.agplugin?download=1",
-      "sha256": "1ad7fc4df94eb11d1b6f7b1c7dc30c7a2e7abe892c086a54fe6b160fd0539d20"
+      "downloadURL": "https://github.com/gpiano/AudioGradePlugins/releases/download/library-statistics-v1.1.3/library-statistics-1.1.3.agplugin?download=1",
+      "sha256": "7447e72242ce04e82687c58cb5a614219d9417e3b8d0970ba3f225e5160f9c39"
     }
   ],
   "revokedVersions": {}
