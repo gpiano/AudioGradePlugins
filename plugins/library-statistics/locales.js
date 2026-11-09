@@ -22,7 +22,7 @@ globalThis.AudioGradePluginLocales = {
   },
   "es": {
     "title": "Estadísticas de la biblioteca",
-    "eyebrow": "Plugin de AudioGrade",
+    "eyebrow": "Complemento de AudioGrade",
     "subtitle": "Explora los reportes que seleccionaste.",
     "summary": "Resumen",
     "reports": "Reportes",
@@ -42,7 +42,7 @@ globalThis.AudioGradePluginLocales = {
   },
   "pt": {
     "title": "Estatísticas da biblioteca",
-    "eyebrow": "Plugin do AudioGrade",
+    "eyebrow": "Complemento do AudioGrade",
     "subtitle": "Explore os relatórios selecionados.",
     "summary": "Resumo",
     "reports": "Relatórios",
@@ -82,7 +82,7 @@ globalThis.AudioGradePluginLocales = {
   },
   "de": {
     "title": "Bibliotheksstatistik",
-    "eyebrow": "AudioGrade-Plugin",
+    "eyebrow": "AudioGrade-Erweiterung",
     "subtitle": "Erkunde die ausgewählten Berichte.",
     "summary": "Übersicht",
     "reports": "Berichte",
@@ -162,7 +162,7 @@ globalThis.AudioGradePluginLocales = {
   },
   "zh-hant": {
     "title": "資料庫統計",
-    "eyebrow": "AudioGrade 外掛",
+    "eyebrow": "AudioGrade 外掛模組",
     "subtitle": "瀏覽您選取的報告。",
     "summary": "摘要",
     "reports": "報告",

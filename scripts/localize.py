@@ -6,7 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 LANGUAGES = ['en', 'es', 'pt', 'fr', 'de', 'ja', 'ko', 'zh-hans', 'zh-hant']
 ROWS = '''title|Library Statistics|Estadísticas de la biblioteca|Estatísticas da biblioteca|Statistiques de la bibliothèque|Bibliotheksstatistik|ライブラリの統計|라이브러리 통계|资料库统计|資料庫統計
-eyebrow|AudioGrade plugin|Plugin de AudioGrade|Plugin do AudioGrade|Extension AudioGrade|AudioGrade-Plugin|AudioGrade プラグイン|AudioGrade 플러그인|AudioGrade 插件|AudioGrade 外掛
+eyebrow|AudioGrade plugin|Complemento de AudioGrade|Complemento do AudioGrade|Extension AudioGrade|AudioGrade-Erweiterung|AudioGrade プラグイン|AudioGrade 플러그인|AudioGrade 插件|AudioGrade 外掛模組
 subtitle|Explore the reports you selected.|Explora los reportes que seleccionaste.|Explore os relatórios selecionados.|Explorez les rapports sélectionnés.|Erkunde die ausgewählten Berichte.|選択したレポートを確認します。|선택한 보고서를 살펴보세요.|浏览您选择的报告。|瀏覽您選取的報告。
 summary|Summary|Resumen|Resumo|Résumé|Übersicht|概要|요약|摘要|摘要
 reports|Reports|Reportes|Relatórios|Rapports|Berichte|レポート|보고서|报告|報告
@@ -30,11 +30,11 @@ folder = ROOT / 'plugins/library-statistics'
 (folder / 'locales.js').write_text('/* SPDX-License-Identifier: MIT */\nglobalThis.AudioGradePluginLocales = '
     + json.dumps(translations, ensure_ascii=False, indent=2) + ';\n', encoding='utf-8')
 manifest = {
-    'id': 'library-statistics', 'version': '1.0.0', 'apiVersion': 1,
+    'id': 'library-statistics', 'version': '1.0.1', 'apiVersion': 1,
     'name': {lang: text['title'] for lang, text in translations.items()},
     'description': {lang: text['subtitle'] for lang, text in translations.items()},
     'author': 'AudioGrade', 'license': 'MIT',
-    'sourceURL': 'https://github.com/gpiano/AudioGradePlugins/tree/library-statistics-v1.0.0/plugins/library-statistics',
+    'sourceURL': 'https://github.com/gpiano/AudioGradePlugins/tree/library-statistics-v1.0.1/plugins/library-statistics',
     'privacyURL': 'https://github.com/gpiano/AudioGradePlugins/blob/main/PRIVACY.md',
     'supportURL': 'https://github.com/gpiano/AudioGradePlugins/issues/new?template=plugin-issue.yml',
     'universalLink': 'https://audiograde.app/plugins/library-statistics',
