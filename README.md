@@ -1,12 +1,14 @@
 # AudioGrade Plugins
 
-Public source and reviewed catalog for external AudioGrade plugins. The host app
-contains no plugin code. All plugin HTML, CSS, JavaScript, translations and assets
-are downloaded as a separately versioned package.
+External, MIT-licensed plugins for AudioGrade. Library Statistics 1.0.0 is
+published as an immutable GitHub prerelease with its reviewed catalog and
+SHA-256 digest. It is intended for the AudioGrade plugins preview branch.
+The released App Store app does not yet include the plugin manager.
 
-This repository is currently a local implementation candidate. Its GitHub releases
-and website integration must be published and verified before live installation
-or App Store submission can be claimed.
+[Download and source release](https://github.com/gpiano/AudioGradePlugins/releases/tag/library-statistics-v1.0.0)
+
+Website integration, associated-domain provisioning and App Review validation
+remain prerequisites for an App Store release.
 
 ## Library Statistics
 
