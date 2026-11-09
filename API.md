@@ -105,9 +105,9 @@ Library Statistics shows only a localized message if loading fails, asking the
 user to close and reopen the plugin.
 
 The native Stop Sharing action invalidates grants and pending work, destroys the
-WebKit document and starts a new plugin instance with no report data. Library
-Statistics immediately requests a fresh native selection, which still needs
-explicit approval. Cancelling that request closes the window. Closing,
+WebKit document and closes that plugin window. It does not start another instance
+or reopen the selector. The user can explicitly reopen the plugin from the menu,
+which creates a new session requiring a fresh selection and approval. Closing,
 disabling, removing, blocking or catalog revocation ends the session too. An
 in-flight response is checked again after reading and is not delivered after
 revocation. Tokens cannot be reused across instances or plugins. A plugin cannot

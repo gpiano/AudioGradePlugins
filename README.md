@@ -42,7 +42,8 @@ native consent for the fields it actually uses. The user goes directly to the
 report selector, then the plugin queries authorized reports in pages. No report
 payload is pushed on open or on approval. Cancel closes the plugin window and
 ends its session. There is no intermediate screen or Choose Reports button.
-Reopen the plugin from the menu to start again. Access can be revoked at any time. See [the API contract](API.md) for methods, versioning,
+Stop Sharing also revokes access and closes the plugin window.
+Reopen the plugin from the menu to start again with a new selection and approval. See [the API contract](API.md) for methods, versioning,
 field scopes, pagination, lifecycle and errors.
 
 Library Statistics requests titles, artist, format, duration, sample rate, bit

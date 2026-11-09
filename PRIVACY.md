@@ -12,7 +12,8 @@ accounts, analytics, advertising or persistent storage. Audio files, file paths,
 bookmarks, artwork and credentials are not shared with it.
 
 Authorization is limited to the current session. The grant, pending queries and
-loaded data are discarded when you stop sharing or close the plugin.
+loaded data are discarded when you stop sharing or close the plugin. Stop Sharing
+also closes the plugin window. Reopening it requires fresh authorization.
 Disabling, removing or blocking a plugin also ends its access. Removing a plugin
 does not remove or modify your reports or audio files.
 
