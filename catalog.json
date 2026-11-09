@@ -40,7 +40,7 @@
         ],
         "entrypoint": "index.html"
       },
-      "downloadURL": "https://github.com/gpiano/AudioGradePlugins/releases/download/library-statistics-v1.1.0/library-statistics-1.1.0.agplugin",
+      "downloadURL": "https://github.com/gpiano/AudioGradePlugins/releases/download/library-statistics-v1.1.0/library-statistics-1.1.0.agplugin?download=1",
       "sha256": "28702f349084d4ef6b317b88f72001d159b4543068643786ebcd6ba5e0c12d8c"
     }
   ],

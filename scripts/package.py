@@ -23,7 +23,7 @@ for folder in sorted((ROOT / "plugins").iterdir()):
     filename = f"{manifest['id']}-{manifest['version']}.agplugin"
     (output / filename).write_bytes(package)
     entries.append({"manifest": manifest,
-                    "downloadURL": f"https://github.com/gpiano/AudioGradePlugins/releases/download/{manifest['id']}-v{manifest['version']}/{filename}",
+                    "downloadURL": f"https://github.com/gpiano/AudioGradePlugins/releases/download/{manifest['id']}-v{manifest['version']}/{filename}?download=1",
                     "sha256": hashlib.sha256(package).hexdigest()})
 catalog = {"schemaVersion": 1, "plugins": entries, "revokedVersions": revocations}
 (ROOT / "catalog.json").write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n")
