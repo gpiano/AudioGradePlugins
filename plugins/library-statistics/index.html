@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Library Statistics</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="locales.js"></script>
+  <script defer src="statistics.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <main>
+    <header><p class="eyebrow" id="eyebrow"></p><h1 id="title"></h1><p id="subtitle" class="muted"></p></header>
+    <section class="summary" aria-label="Summary" id="summary"></section>
+    <section class="distributions" id="distributions"></section>
+    <section class="track-section">
+      <div class="section-heading"><h2 id="tracks-title"></h2><label><span id="search-label"></span><input id="search" type="search"></label></div>
+      <div class="table-scroll"><table><thead><tr id="columns"></tr></thead><tbody id="tracks"></tbody></table></div>
+      <p id="no-matches" class="muted" hidden></p>
+    </section>
+    <footer id="note" class="muted"></footer>
+  </main>
+</body>
+</html>

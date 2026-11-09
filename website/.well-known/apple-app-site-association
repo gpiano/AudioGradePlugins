@@ -1,0 +1,10 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["VJA7X5QJ34.com.uruaudio.audiograde"],
+        "components": [{"/": "/plugins/*"}]
+      }
+    ]
+  }
+}

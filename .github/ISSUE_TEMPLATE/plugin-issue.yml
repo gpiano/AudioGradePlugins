@@ -1,0 +1,31 @@
+name: Report a plugin problem
+description: Report a malfunction, privacy concern, or inappropriate plugin content.
+title: "[Plugin] "
+body:
+  - type: markdown
+    attributes:
+      value: "Issues are public. Do not include private report data, audio, paths, or credentials. You can disable the plugin and block its author in AudioGrade immediately."
+  - type: input
+    id: plugin
+    attributes:
+      label: Plugin and version
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Functionality
+        - Privacy or security
+        - Inappropriate content
+        - Accessibility or localization
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: What happened?
+      description: Describe the problem without including personal or confidential data.
+    validations:
+      required: true

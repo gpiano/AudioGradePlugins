@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "plugins": [
+    {
+      "manifest": {
+        "id": "library-statistics",
+        "version": "1.0.0",
+        "apiVersion": 1,
+        "name": {
+          "en": "Library Statistics",
+          "es": "Estadísticas de la biblioteca",
+          "pt": "Estatísticas da biblioteca",
+          "fr": "Statistiques de la bibliothèque",
+          "de": "Bibliotheksstatistik",
+          "ja": "ライブラリの統計",
+          "ko": "라이브러리 통계",
+          "zh-hans": "资料库统计",
+          "zh-hant": "資料庫統計"
+        },
+        "description": {
+          "en": "Explore the reports you selected.",
+          "es": "Explora los reportes que seleccionaste.",
+          "pt": "Explore os relatórios selecionados.",
+          "fr": "Explorez les rapports sélectionnés.",
+          "de": "Erkunde die ausgewählten Berichte.",
+          "ja": "選択したレポートを確認します。",
+          "ko": "선택한 보고서를 살펴보세요.",
+          "zh-hans": "浏览您选择的报告。",
+          "zh-hant": "瀏覽您選取的報告。"
+        },
+        "author": "AudioGrade",
+        "license": "MIT",
+        "sourceURL": "https://github.com/gpiano/AudioGradePlugins/tree/library-statistics-v1.0.0/plugins/library-statistics",
+        "privacyURL": "https://github.com/gpiano/AudioGradePlugins/blob/main/PRIVACY.md",
+        "supportURL": "https://github.com/gpiano/AudioGradePlugins/issues/new?template=plugin-issue.yml",
+        "universalLink": "https://audiograde.app/plugins/library-statistics",
+        "minimumAge": 4,
+        "permissions": [
+          "reports.read"
+        ],
+        "entrypoint": "index.html"
+      },
+      "downloadURL": "https://github.com/gpiano/AudioGradePlugins/releases/download/library-statistics-v1.0.0/library-statistics-1.0.0.agplugin",
+      "sha256": "54f1fb7fc6404fa3585a562433e1b83182a5baf246fef633c39abdb9fb42923b"
+    }
+  ],
+  "revokedVersions": {}
+}
